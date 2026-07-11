@@ -1,0 +1,243 @@
+.recipe-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-detail-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.recipe-detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-detail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.recipe-detail-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.recipe-detail-content {
+    padding: 32px;
+}
+
+.recipe-detail-header {
+    margin-bottom: 24px;
+}
+
+.recipe-detail-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.recipe-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: #666;
+    font-size: 14px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.recipe-detail-description,
+.recipe-detail-ingredients,
+.recipe-detail-steps {
+    margin-bottom: 32px;
+}
+
+.recipe-detail-description h3,
+.recipe-detail-ingredients h3,
+.recipe-detail-steps h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.recipe-detail-description p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.ingredient-bullet {
+    color: #667eea;
+    font-weight: 700;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.step-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.step-item:hover {
+    background: #f0f0f0;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.step-text {
+    color: #444;
+    line-height: 1.5;
+}
+
+.recipe-detail-actions {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: #667eea;
+    color: white;
+}
+
+.btn-edit:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background: #ff5252;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #c62828;
+    transform: scale(1.05);
+}
+
+.recipe-detail-loading,
+.recipe-detail-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 40px;
+}
+
+.recipe-detail-error h2 {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.recipe-detail-error p {
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.btn-back {
+    padding: 10px 24px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .recipe-detail-image-container {
+        height: 250px;
+    }
+
+    .recipe-detail-content {
+        padding: 20px;
+    }
+
+    .recipe-detail-title {
+        font-size: 24px;
+    }
+
+    .ingredients-list {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-detail-actions {
+        flex-direction: column;
+    }
+}
