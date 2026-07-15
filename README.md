@@ -3,16 +3,16 @@
 Веб-приложение для поиска и публикации кулинарных рецептов с системой комментариев и авторизацией.
 
 ## 📸 Скриншоты
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)
-![img_7.png](img_7.png)
-![img_8.png](img_8.png)
-![img_9.png](img_9.png)
+![img.png](frontend/src/img/img.png)
+![img_1.png](frontend/src/img/img_1.png)
+![img_2.png](frontend/src/img/img_2.png)
+![img_3.png](frontend/src/img/img_3.png)
+![img_4.png](frontend/src/img/img_4.png)
+![img_5.png](frontend/src/img/img_5.png)
+![img_6.png](frontend/src/img/img_6.png)
+![img_7.png](frontend/src/img/img_7.png)
+![img_8.png](frontend/src/img/img_8.png)
+![img_9.png](frontend/src/img/img_9.png)
 
 ## ✨ Особенности
 
