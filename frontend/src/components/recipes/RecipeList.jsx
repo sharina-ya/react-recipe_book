@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import api from '../../api';
 import RecipeCard from './RecipeCard';
 import CategoryFilter from './CategoryFilter';
@@ -10,6 +12,7 @@ const RecipeList = () => {
     const [error, setError] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
+    const { isAdmin } = useAuth(); // Добавляем проверку на админа
 
     const fetchRecipes = async () => {
         try {
@@ -76,16 +79,25 @@ const RecipeList = () => {
         <div className="recipe-list-container">
             <div className="recipe-list-header">
                 <h2>Все рецепты</h2>
-                <form onSubmit={handleSearch} className="search-form">
-                    <input
-                        type="text"
-                        placeholder="Поиск рецептов..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="search-input"
-                    />
-                    <button type="submit" className="search-btn">🔍</button>
-                </form>
+                <div className="recipe-list-actions">
+                    <form onSubmit={handleSearch} className="search-form">
+                        <input
+                            type="text"
+                            placeholder="Поиск рецептов..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="search-input"
+                        />
+                        <button type="submit" className="search-btn">🔍</button>
+                    </form>
+
+                    {/* Кнопка создания рецепта - видна только админам */}
+                    {isAdmin && (
+                        <Link to="/recipes/create" className="btn-create-recipe">
+                            ➕ Создать рецепт
+                        </Link>
+                    )}
+                </div>
             </div>
 
             <CategoryFilter
@@ -97,6 +109,11 @@ const RecipeList = () => {
                 <div className="no-recipes">
                     <p>😕 Рецептов не найдено</p>
                     <p className="no-recipes-hint">Попробуйте изменить фильтры или поиск</p>
+                    {isAdmin && (
+                        <Link to="/recipes/create" className="btn-create-first">
+                            Создать первый рецепт
+                        </Link>
+                    )}
                 </div>
             ) : (
                 <div className="recipes-grid">

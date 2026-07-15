@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }) => {
         register,
         logout,
         isAuthenticated: !!user,
-        isAdmin: user?.is_staff || false,
+        isAdmin: user?.is_staff || false, // Важно! Проверяем is_staff
     };
 
     return (
